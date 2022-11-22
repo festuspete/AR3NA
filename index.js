@@ -2,6 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const userRouter = require('./routes/user')
 const mongoose = require('mongoose')
+const cors = require('cors')
 //const mg = require('mailgun.js')
 
 
@@ -9,6 +10,7 @@ dotenv.config()
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
