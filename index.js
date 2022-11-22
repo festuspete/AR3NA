@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 
 
 const port = process.env.PORT || 3000
-app.use('/api/v0/ar3na', userRouter)
+app.use('/api/v1/ar3na', userRouter)
 
 
 mongoose.connect(process.env.MONGO_URI, 
