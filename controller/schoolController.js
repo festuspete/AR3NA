@@ -2,7 +2,7 @@ const School = require('../model/School')
 const asyncErrors = require('./errorController')
 
 exports.createSchool = asyncErrors(async (req, res, next) => {
-    const newSchool = new User ({
+    const newSchool = new School ({
         schoolName: req.body.schoolName,
         country: req.body.country,
         state: req.body.state,
@@ -15,7 +15,7 @@ exports.createSchool = asyncErrors(async (req, res, next) => {
     res.status(201).json({
         status: 'success',
         data: {
-            user: newUser
+            user: newSchool
         }
     })
 
