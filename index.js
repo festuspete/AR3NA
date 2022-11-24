@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const userRouter = require('./routes/user')
+const schoolRouter = require('./routes/school')
 const mongoose = require('mongoose')
 const cors = require('cors')
 //const mg = require('mailgun.js')
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 
 const port = process.env.PORT || 3000
 app.use('/api/v1/ar3na', userRouter)
+app.use('/api/v1/ar3na', schoolRouter)
 
 
 mongoose.connect(process.env.MONGO_URI, 
