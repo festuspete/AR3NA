@@ -3,6 +3,10 @@ const dotenv = require('dotenv')
 const userRouter = require('./routes/user')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const helmet = require("helmet")
+const xss = require("xss-clean")
+const mongoSanitize = require("express-mongo-sanitize");
+const morgan = require('morgan');
 //const mg = require('mailgun.js')
 
 
@@ -11,6 +15,10 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use(helmet())
+app.use(xss())
+app.use(mongoSanitize())
+app.use(morgan("combined"))
 
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();

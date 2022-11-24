@@ -21,7 +21,6 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         validate: [validator.isEmail, 'Please provide a valid email']
     }, 
-    photo: String,
     password: {
         type: String,
         required: [true, 'Please provide a password'],
@@ -46,59 +45,6 @@ const userSchema = new mongoose.Schema({
     passwordChangedAt: Date,
     passwordResetToken: String,
     passwordResetExpires: Date,
-    active: {
-        type: Boolean,
-        default: true,
-        select: false
-    },
-    dob: {
-       type: String,
-    
-
-    },
-    nickname: {
-        type: String,
-        default: ''
-
-    },
-    address: {
-        type: String,
-        default: ''
-    },
-    country: {
-        type: String,
-        default: ''
-    },
-    gender: {
-        type: String,
-        default: '',
-    },
-    maritalStatus: {
-        type: String,
-        default: ''
-    },
-    number: {
-        type: Number,
-    },
-    otherNumber: {
-        type: Number,
-    },
-    Stateofresidence: {
-        type: String,
-        default: ''
-    },
-    occupation: {
-        type: String,
-        default: ''
-    },
-    occupationdetails: {
-        type: String,
-        default: ''
-    }
-
-
-
-
 })
 
 //encrypt the password by using a mongoose middleware(presave middleware)

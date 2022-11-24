@@ -1,10 +1,12 @@
 const router = require('express').Router()
 const authController = require('../controller/authController')
 const userController = require('../controller/userController')
+const profileContoller = require("../controller/profileController")
 //const { isResetTokenValid } = require('../middleware/user')
 
-router.post('/signup', authController.signup )
-router.post('/login', authController.login )
+router.post('/signup', authController.signup)
+router.post('/login', authController.login)
+router.post("/profile",profileContoller)
 
 router.post('/verify-email', authController.verifyEmail)
 router.post('/forgotPassword', authController.forgotPassword)
