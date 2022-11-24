@@ -6,11 +6,11 @@ const { kStringMaxLength } = require('buffer')
 
 
 const userSchema = new mongoose.Schema({
-    firstname: {
+    firstName: {
         type: String,
         required: [true, 'Please provide your first name']
     },
-    lastname: {
+    lastName: {
         type: String,
         required: [true, 'Please provide your last name']
     },
@@ -25,7 +25,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide a password'],
         minlength: 6,
-        maxlength: 20,
         select: false
     }, 
     confirmPassword: {
